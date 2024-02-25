@@ -62,6 +62,9 @@ jobs:
     defaults:
       run:
         shell: bash
+      env: # Or as an environment variable
+        TENCENTCLOUD_SECRET_ID: ${{ secrets.TENCENTCLOUD_SECRET_ID }}
+        TENCENTCLOUD_SECRET_KEY: ${{ secrets.TENCENTCLOUD_SECRET_KEY }}
 
     steps:
     # Checkout the repository to the GitHub Actions runner
