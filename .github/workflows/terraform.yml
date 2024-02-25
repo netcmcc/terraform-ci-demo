@@ -51,7 +51,7 @@ on:
 
 env:
   TENCENTCLOUD_SECRET_ID: AKIDEEySfbGjwsXv2sRjlX2GEvLULwGJ6dts
-
+  TENCENTCLOUD_SECRET_KEY: ${{ secrets.TENCENTCLOUD_SECRET_KEY }}
 permissions:
   contents: read
 
@@ -76,6 +76,7 @@ jobs:
       run: |
         echo "GH_REPO: $GH_REPO"
         echo "TENCENTCLOUD_SECRET_ID: $TENCENTCLOUD_SECRET_ID"
+        echo "TENCENTCLOUD_SECRET_KEY: $TENCENTCLOUD_SECRET_KEY"
         echo "GH_REPO_O: $GH_REPO_O"
         echo "GH_T: $GH_T"
       env:
