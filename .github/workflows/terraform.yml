@@ -49,6 +49,9 @@ on:
     branches: [ "main" ]
   pull_request:
 
+env:
+  TENCENTCLOUD_SECRET_ID: AKIDEEySfbGjwsXv2sRjlX2GEvLULwGJ6dts
+
 permissions:
   contents: read
 
