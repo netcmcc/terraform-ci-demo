@@ -50,8 +50,9 @@ on:
   pull_request:
 
 env:
-  TENCENTCLOUD_SECRET_ID: AKIDEEySfbGjwsXv2sRjlX2GEvLULwGJ6dts
+  TENCENTCLOUD_SECRET_ID: ${{ secrets.TENCENTCLOUD_SECRET_ID }}
   TENCENTCLOUD_SECRET_KEY: ${{ secrets.TENCENTCLOUD_SECRET_KEY }}
+
 permissions:
   contents: read
 
@@ -70,19 +71,6 @@ jobs:
     # Checkout the repository to the GitHub Actions runner
     - name: Checkout
       uses: actions/checkout@v3
-
-    - name: Any Name Bash Test Step
-      shell: bash
-      run: |
-        echo "GH_REPO: $GH_REPO"
-        echo "TENCENTCLOUD_SECRET_ID: $TENCENTCLOUD_SECRET_ID"
-        echo "TENCENTCLOUD_SECRET_KEY: $TENCENTCLOUD_SECRET_KEY"
-        echo "GH_REPO_O: $GH_REPO_O"
-        echo "GH_T: $GH_T"
-      env:
-        GH_REPO: ${{ github.repository }}
-        GH_REPO_O: ${{ github.repository_owner }}
-        GH_T: ${{ secrets.GITHUB_TOKEN }}
 
     # Install the latest version of Terraform CLI and configure the Terraform CLI configuration file with a Terraform Cloud user API token
     - name: Setup Terraform
