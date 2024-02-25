@@ -9,6 +9,6 @@ subnets = [
   {
     name = "az-two"
     zone = "ap-guangzhou-7"
-    cidr = "192.168.2.0/24"
+    cidr = "192.168.3.0/24"
   },
 ]
